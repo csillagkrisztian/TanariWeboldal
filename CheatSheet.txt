@@ -1,0 +1,43 @@
+html definialasok - <{definicio}> {tartalom} </{definicio}>
+html tartalom nelkuli def - <{def}/>
+
+minden html elem egy funkcio
+minden html elemnek van style argumentuma
+
+p - paragrafus
+br - break - ures hely
+a - hyperlink
+h{szam} - header - fejlec
+div - divider - elvalaszto
+input - bevinni valamit a felhasznaloval
+button - gomb
+img - kep
+
+{CUSTOM - React komponens}
+
+React definicio -> 
+funkciot csinalunk, nagy kezdobetuvel
+function Valami(props) {
+    return <p>Szia {props.nev}</p>
+}
+
+htmlben 
+<Valami nev={"Jani"} /> 
+
+A return ele megy a Javascript! 
+A returnBE pedig a HTML/REACT
+
+https://www.w3schools.com/tags/tag_input.asp
+
+Ha klonozol egy appet a gitrol 
+npm i <- azert hogy feltelepije az osszes konyvtarat (a sok kod amit mar nekunk nem kell basztatni)
+
+komment a htmlbe
+{/* */}
+
+const [state, setState] = useState();
+
+html argumentumok -> 
+onClick - onClick={(event)=>{}}
+
+F2 a variansra es kivalasztod az osszes esetets
