@@ -5,7 +5,7 @@ import axios from "axios";
 import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
-import Patients from "./components/Patients";
+import Hospitals from "./components/Hospitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hospital-health-cropped-icon-png-physician-senior-services-5d05236ae760a0.7278499315606178349477.png";
 
@@ -13,10 +13,10 @@ export default function App() {
   const [database, setDatabase] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:8000/1");
+      const result = await axios.get("http://localhost:8000");
       setDatabase(result.data);
     };
-    setTimeout(fetchData, 4000);
+    setTimeout(fetchData, 2000);
   }, []);
 
   if (!database) {
@@ -37,7 +37,7 @@ export default function App() {
         className="border-bottom border-dark"
       >
         <Container>
-          <Navbar.Brand>
+          <Navbar.Brand href="/">
             <img
               alt="Hospital Logo"
               src={HospitalLogo}
@@ -58,7 +58,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/hospitals">
-            <Patients />
+            <Hospitals hospitals={database} />
           </Route>
           <Route path="/">
             <Home />

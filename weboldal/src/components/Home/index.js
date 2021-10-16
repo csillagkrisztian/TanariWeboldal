@@ -41,6 +41,7 @@ export default function Home() {
               marginRight: "16px",
               border: "solid 1px #e7f4f4",
               borderRadius: "15%",
+              marginBottom: "60px",
               boxShadow: "0px 2px #e7f4f4",
             }}
           >
@@ -67,6 +68,7 @@ export default function Home() {
               marginRight: "32px",
               border: "solid 1px #e7f4f4",
               borderRadius: "15%",
+              marginBottom: "60px",
               boxShadow: "0px 2px #e7f4f4",
             }}
           >
