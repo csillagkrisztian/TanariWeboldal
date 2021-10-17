@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const lo = "Bácska Hospital Service";
   const lo1 = "Welcome to...";
+
   return (
     <div>
       <Container fluid="true" className="justify-content mt-4">

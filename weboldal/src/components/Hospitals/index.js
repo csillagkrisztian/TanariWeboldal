@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import pills from "../../images/pills.png";
 
 export default function Hospitals({ hospitals }) {
-  console.log("hospitals");
+  console.log("hospitals", hospitals);
   return (
     <div>
       <h4 style={{ opacity: "0.4", marginLeft: "12vh", marginTop: "50px" }}>
@@ -27,28 +28,31 @@ export default function Hospitals({ hospitals }) {
           </Col>
         </Row>
         <Row>
-          {Object.values(hospitals).map((hospital) => {
+          {hospitals.map((hospital) => {
             return (
               <Col>
-                <h2
-                  style={{
-                    marginLeft: "16px",
-                  }}
-                >
-                  {hospital.nev}
-                </h2>
-                <img
-                  style={{
-                    width: "500px",
-                    height: "400px",
-                    margin: "auto",
-                    marginTop: "16px",
-                    objectFit: "cover",
-                    display: "block",
-                    marginBottom: "60px",
-                  }}
-                  src={hospital.kep}
-                ></img>
+                <Link to={`/hospitals/${hospital.id}`}>
+                  <h2
+                    style={{
+                      marginLeft: "16px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {hospital.nev}
+                  </h2>
+                  <img
+                    style={{
+                      width: "500px",
+                      height: "400px",
+                      margin: "auto",
+                      marginTop: "16px",
+                      objectFit: "cover",
+                      display: "block",
+                      marginBottom: "60px",
+                    }}
+                    src={hospital.kep}
+                  ></img>
+                </Link>
               </Col>
             );
           })}

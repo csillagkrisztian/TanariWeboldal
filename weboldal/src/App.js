@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import Hospitals from "./components/Hospitals";
+import Hospital from "./components/Hospital";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hospital-health-cropped-icon-png-physician-senior-services-5d05236ae760a0.7278499315606178349477.png";
 
@@ -16,7 +17,7 @@ export default function App() {
       const result = await axios.get("http://localhost:8000");
       setDatabase(result.data);
     };
-    setTimeout(fetchData, 2000);
+    fetchData();
   }, []);
 
   if (!database) {
@@ -54,8 +55,14 @@ export default function App() {
       </Navbar>
       <Router>
         <Switch>
+          <Route path="/geci">
+            <p>GECI</p>
+          </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/hospitals/:hospitalId">
+            <Hospital hospitals={database}></Hospital>
           </Route>
           <Route path="/hospitals">
             <Hospitals hospitals={database} />
