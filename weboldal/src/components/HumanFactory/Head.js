@@ -4,13 +4,17 @@ import Eyes from "./Eyes";
 import Mouth from "./Mouth";
 import Nose from "./Nose";
 import Ears from "./Ears";
+import Teeth from "./Teeth";
 
 export default function Head({
   eyesColor,
+  mouthPosition,
+  nosePosition,
   eyePosition,
   lipColor,
   earPositions,
   skinColor,
+  teethPosition,
 }) {
   return (
     <div>
@@ -20,8 +24,9 @@ export default function Head({
         style={{ height: "400px", width: "400px", margin: "90px" }}
       ></HeadSvg>
       <Ears earPositions={earPositions} skinColor={skinColor} />
-      <Nose />
-      <Mouth lipColor={lipColor} />
+      <Nose position={nosePosition} />
+      <Mouth position={mouthPosition} lipColor={lipColor} />
+      <Teeth teethPosition={teethPosition} />
       <Eyes eyesColor={eyesColor} eyePosition={eyePosition} />
     </div>
   );

@@ -6,6 +6,9 @@ export default function Human({ dna }) {
   return (
     <div>
       <Head
+        mouthPosition={dna.mouthPosition}
+        nosePosition={dna.nosePosition}
+        teethPosition={dna.teethPosition}
         eyesColor={dna.eyesColor}
         skinColor={dna.skinColor}
         lipColor={dna.lipColor}

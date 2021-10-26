@@ -17,7 +17,7 @@ import Hospital from "./components/Hospital";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hospital-health-cropped-icon-png-physician-senior-services-5d05236ae760a0.7278499315606178349477.png";
-import HumanFactory from "./components/HumanFactory";
+import HumanFactory from "./components/HumanFactory/index";
 
 export default function App() {
   const [database, setDatabase] = useState();
@@ -29,7 +29,7 @@ export default function App() {
     fetchData();
   }, []);
 
-  if (!database) {
+  /*if (!database) {
     return (
       <div className="heart-container">
         <div className="lds-heart">
@@ -37,7 +37,7 @@ export default function App() {
         </div>
       </div>
     );
-  }
+  }*/
 
   return (
     <div className="App">

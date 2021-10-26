@@ -6,12 +6,12 @@ export default function Eyes({ eyePosition, eyesColor }) {
     <div>
       <Eye
         eyeTopPostion={eyePosition.top}
-        eyePosition={300}
+        eyeLeftPosition={300}
         color={eyesColor}
       ></Eye>
       <Eye
         eyeTopPostion={eyePosition.top}
-        eyePosition={180}
+        eyeLeftPosition={180}
         color={eyesColor}
       ></Eye>
     </div>

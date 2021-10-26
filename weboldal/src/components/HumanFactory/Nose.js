@@ -1,15 +1,15 @@
 import React from "react";
 import { ReactComponent as NoseSvg } from "../../images/nose.svg";
 
-export default function Nose() {
+export default function Nose({ position }) {
   return (
     <div>
       <NoseSvg
         style={{
-          height: "400px",
           position: "absolute",
-          top: "150",
-          left: "180",
+          height: position.height,
+          top: position.top,
+          left: position.left,
         }}
       ></NoseSvg>
     </div>
