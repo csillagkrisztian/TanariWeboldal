@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { ReactComponent as Eye } from "./images/eye.svg";
+import { ReactComponent as Mouth } from "./images/mouth.svg";
+import { ReactComponent as Nose } from "./images/nose.svg";
+import { ReactComponent as Head } from "./images/head.svg";
+import { ReactComponent as Ear } from "./images/ear.svg";
+import { ReactComponent as Body } from "./images/body.svg";
+import { ReactComponent as Tooth } from "./images/tooth.svg";
 import axios from "axios";
 import "./App.css";
 import Home from "./components/Home";
@@ -8,7 +15,9 @@ import About from "./components/About";
 import Hospitals from "./components/Hospitals";
 import Hospital from "./components/Hospital";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hospital-health-cropped-icon-png-physician-senior-services-5d05236ae760a0.7278499315606178349477.png";
+import HumanFactory from "./components/HumanFactory";
 
 export default function App() {
   const [database, setDatabase] = useState();
@@ -32,7 +41,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <Navbar
+      <HumanFactory></HumanFactory>
+      {/*<Navbar
         sticky="top"
         style={{ background: "white" }}
         className="border-bottom border-dark"
@@ -56,7 +66,6 @@ export default function App() {
       <Router>
         <Switch>
           <Route path="/geci">
-            <p>GECI</p>
           </Route>
           <Route path="/about">
             <About />
@@ -71,7 +80,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-      </Router>
+      </Router>*/}
     </div>
   );
 }
