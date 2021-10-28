@@ -96,7 +96,7 @@ export default function HumanFactory() {
         top: "970",
         left: "240",
       },
-      middle: { undefined },
+      middle: {},
       right: {
         backgroundColor: "black",
         height: "30px",
