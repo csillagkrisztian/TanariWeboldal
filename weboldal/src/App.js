@@ -29,7 +29,11 @@ export default function App() {
     fetchData();
   }, []);
 
+<<<<<<< HEAD
   /*if (!database) {
+=======
+  /*if (database) {
+>>>>>>> 3b87a920cec8605e17983e23ce644d0f67992549
     return (
       <div className="heart-container">
         <div className="lds-heart">
