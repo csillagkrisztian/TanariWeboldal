@@ -17,7 +17,14 @@ export default function Head({
       <HeadSvg
         fill={skinColor}
         stroke="black"
-        style={{ height: "400px", width: "400px", margin: "90px" }}
+        style={{
+          height: "400px",
+          width: "400px",
+          margin: "90px",
+          position: "absolute",
+          left: "0",
+          top: "0",
+        }}
       ></HeadSvg>
       <Ears earPositions={earPositions} skinColor={skinColor} />
       <Nose />

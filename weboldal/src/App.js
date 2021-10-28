@@ -29,7 +29,7 @@ export default function App() {
     fetchData();
   }, []);
 
-  if (!database) {
+  /*if (database) {
     return (
       <div className="heart-container">
         <div className="lds-heart">
@@ -37,7 +37,7 @@ export default function App() {
         </div>
       </div>
     );
-  }
+  }*/
 
   return (
     <div className="App">
