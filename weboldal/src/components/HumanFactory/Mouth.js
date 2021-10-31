@@ -1,16 +1,16 @@
 import React from "react";
 import { ReactComponent as MouthSvg } from "../../images/mouth.svg";
 
-export default function Mouth({ lipColor, position }) {
+export default function Mouth({ lipColor, mouthPosition }) {
   return (
     <div>
       <MouthSvg
         fill={lipColor}
         style={{
           position: "absolute",
-          top: position.top,
-          left: position.left,
-          height: position.height,
+          top: mouthPosition,
+          left: "210",
+          height: "800px",
         }}
       ></MouthSvg>
     </div>

@@ -16,6 +16,13 @@ export default function Head({
   skinColor,
   noseTopPosition,
   teethPosition,
+  nosePosition,
+  earLeftPosition,
+  earRightPosition,
+  earLeftVerticalPosition,
+  earRightVerticalPosition,
+  headPosition,
+  mouthPosition,
 }) {
   return (
     <div>
@@ -28,13 +35,21 @@ export default function Head({
           margin: "90px",
           position: "absolute",
           left: "0",
-          top: "0",
+          top: headPosition,
         }}
       ></HeadSvg>
-      <Ears earPositions={earPositions} skinColor={skinColor} />
-      <Nose position={nosePosition} noseTopPosition={noseTopPosition} />
-      <Mouth position={mouthPosition} lipColor={lipColor} />
+
       <Teeth teethPosition={teethPosition} />
+      <Ears
+        earPositions={earPositions}
+        skinColor={skinColor}
+        earLeftPosition={earLeftPosition}
+        earRightPosition={earRightPosition}
+        earLeftVerticalPosition={earLeftVerticalPosition}
+        earRightVerticalPosition={earRightVerticalPosition}
+      />
+      <Nose nosePosition={nosePosition} />
+      <Mouth lipColor={lipColor} mouthPosition={mouthPosition} />
       <Eyes eyesColor={eyesColor} eyePosition={eyePosition} />
     </div>
   );
