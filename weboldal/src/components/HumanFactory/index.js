@@ -10,12 +10,12 @@ export default function HumanFactory() {
     eyesColor: "black",
     nosePosition: {
       height: "400px",
-      top: "150",
+      top: 150,
       left: "180",
     },
     skinColor: "brown",
     eyePosition: {
-      top: 160,
+      top: 190,
     },
     mouthPosition: {
       top: "180",
@@ -111,6 +111,7 @@ export default function HumanFactory() {
   const HumanEditor = () => {
     const [eyePosition, setEyePosition] = useState(human1.eyePosition.top);
     console.log("eyePosition", eyePosition);
+    const [nosePosition, setNosePosition] = useState(human1.nosePosition.top);
     return (
       <div>
         <div
@@ -141,10 +142,34 @@ export default function HumanFactory() {
                 <label>Down</label>
               </Col>
             </Row>
+            <Row>
+              <Col style={{ margin: "35px", color: "black" }}>
+                Nose position
+              </Col>
+              <Col>
+                <label>Up</label>
+                <input
+                  style={{ margin: "20px" }}
+                  type="range"
+                  min="30"
+                  max="300"
+                  value={nosePosition}
+                  onChange={(event) => {
+                    setNosePosition(event.target.value);
+                  }}
+                ></input>
+                <label>Down</label>
+              </Col>
+            </Row>
           </Container>
         </div>
-        <Human dna={human1} eyePosition={eyePosition}></Human>
+        <Human
+          dna={human1}
+          eyePosition={eyePosition}
+          nosePosition={nosePosition}
+        ></Human>
       </div>
     );
   };
+  return <HumanEditor />;
 }

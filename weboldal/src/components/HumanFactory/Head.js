@@ -14,6 +14,7 @@ export default function Head({
   lipColor,
   earPositions,
   skinColor,
+  noseTopPosition,
   teethPosition,
 }) {
   return (
@@ -31,7 +32,7 @@ export default function Head({
         }}
       ></HeadSvg>
       <Ears earPositions={earPositions} skinColor={skinColor} />
-      <Nose position={nosePosition} />
+      <Nose position={nosePosition} noseTopPosition={noseTopPosition} />
       <Mouth position={mouthPosition} lipColor={lipColor} />
       <Teeth teethPosition={teethPosition} />
       <Eyes eyesColor={eyesColor} eyePosition={eyePosition} />
