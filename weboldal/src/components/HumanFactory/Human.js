@@ -19,7 +19,6 @@ export default function Human({
       <Head
         mouthPosition={dna.mouthPosition}
         noseTopPosition={nosePosition}
-        nosePosition={dna.nosePosition}
         teethPosition={dna.teethPosition}
         headPosition={dna.headPosition}
         eyesColor={dna.eyesColor}

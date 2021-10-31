@@ -16,14 +16,14 @@ export default function Head({
   skinColor,
   noseTopPosition,
   teethPosition,
-  nosePosition,
+
   earLeftPosition,
   earRightPosition,
   earLeftVerticalPosition,
   earRightVerticalPosition,
   headPosition,
-  mouthPosition,
 }) {
+  console.log(mouthPosition, "IDEMOOOOO lol");
   return (
     <div>
       <HeadSvg
@@ -39,7 +39,6 @@ export default function Head({
         }}
       ></HeadSvg>
 
-      <Teeth teethPosition={teethPosition} />
       <Ears
         earPositions={earPositions}
         skinColor={skinColor}

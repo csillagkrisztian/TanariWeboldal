@@ -17,11 +17,7 @@ export default function HumanFactory() {
     eyePosition: {
       top: 190,
     },
-    mouthPosition: {
-      top: "180",
-      left: "210",
-      height: "800px",
-    },
+    mouthPosition: 100,
     teethPosition: {
       left: {
         backgroundColor: "black",

@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as MouthSvg } from "../../images/mouth.svg";
 
 export default function Mouth({ lipColor, mouthPosition }) {
