@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Container, Nav, Navbar, Card } from "react-bootstrap";
+import { Container, Nav, Navbar, Card, Button } from "react-bootstrap";
 import { ReactComponent as Eye } from "./images/eye.svg";
 import { ReactComponent as Mouth } from "./images/mouth.svg";
 import { ReactComponent as Nose } from "./images/nose.svg";
@@ -31,7 +31,7 @@ export default function App() {
     fetchData();
   }, []);
 
-  /*if (database) {
+  if (!database) {
     return (
       <div className="heart-container">
         <div className="lds-heart">
@@ -39,7 +39,7 @@ export default function App() {
         </div>
       </div>
     );
-  }*/
+  }
 
   const Navigation = () => {
     return (
@@ -71,12 +71,12 @@ export default function App() {
     );
   };
 
-  const Pokemon = () => {
+  const Pokemon = ({ name }) => {
     return (
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
-          <Card.Title></Card.Title>
+          <Card.Title>{name}</Card.Title>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
@@ -92,7 +92,13 @@ export default function App() {
   };
 
   const List = () => {
-    return <div>List</div>;
+    return (
+      <div>
+        {database.map((pokemon) => {
+          return <Pokemon name={pokemon.name}></Pokemon>;
+        })}
+      </div>
+    );
   };
 
   console.log("database", database);
