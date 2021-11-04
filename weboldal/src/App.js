@@ -71,10 +71,30 @@ export default function App() {
     );
   };
 
-  const Pokemon = ({ name }) => {
+  const Pokemon = ({ name, url }) => {
+    const [pokemon, setPokemon] = useState();
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await axios.get(url);
+        setPokemon(result.data);
+      };
+      fetchData();
+    }, []);
+
+    if (!pokemon) {
+      return (
+        <div className="heart-container">
+          <div className="lds-heart">
+            <div></div>
+          </div>
+        </div>
+      );
+    }
+
+    console.log(pokemon, "pokemon");
     return (
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src={pokemon.sprites.front_default} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Button variant="primary">Go somewhere</Button>
@@ -95,7 +115,7 @@ export default function App() {
     return (
       <div>
         {database.map((pokemon) => {
-          return <Pokemon name={pokemon.name}></Pokemon>;
+          return <Pokemon url={pokemon.url} name={pokemon.name}></Pokemon>;
         })}
       </div>
     );
