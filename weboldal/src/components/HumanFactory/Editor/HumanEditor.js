@@ -20,6 +20,7 @@ export default function HumanEditor({ human }) {
   const [earRightVerticalPosition, setEarRightVerticalPosition] = useState(
     human.earPositions.right.top
   );
+  const [toothColor, setToothColor] = useState(human.toothColor);
   return (
     <div>
       <div
@@ -97,10 +98,19 @@ export default function HumanEditor({ human }) {
             value={earRightVerticalPosition}
             setValue={setEarRightVerticalPosition}
           />
+          <EditorControl
+            name={"Tooth Color"}
+            startLabel={"Up"}
+            endLabel={"Down"}
+            type={"color"}
+            value={toothColor}
+            setValue={setToothColor}
+          />
         </Container>
       </div>
       <Human
         dna={human}
+        toothColor={toothColor}
         eyePosition={eyePosition}
         lipColor={lipColor}
         nosePosition={nosePosition}

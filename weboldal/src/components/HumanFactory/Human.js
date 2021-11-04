@@ -12,11 +12,13 @@ export default function Human({
   earRightPosition,
   earLeftVerticalPosition,
   earRightVerticalPosition,
+  toothColor,
 }) {
   console.log("déenes", dna);
   return (
     <div>
       <Head
+        toothPositions={dna.toothPositions}
         mouthPosition={dna.mouthPosition}
         headPosition={dna.headPosition}
         eyesColor={dna.eyesColor}
@@ -29,6 +31,7 @@ export default function Human({
         earRightPosition={earRightPosition}
         earLeftVerticalPosition={earLeftVerticalPosition}
         earRightVerticalPosition={earRightVerticalPosition}
+        toothColor={toothColor}
       ></Head>
       <Body></Body>
     </div>

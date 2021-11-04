@@ -25,6 +25,12 @@ export default function HumanFactory() {
         left: 500,
       },
     },
+    toothPositions: {
+      leftTooth: { top: 360, left: 230 },
+      middleTooth: { top: 360, left: 270 },
+      rightTooth: { top: 360, left: 310 },
+    },
+    toothColor: "blue",
   };
   const human2 = {
     mouthPosition: 1000,
@@ -48,11 +54,17 @@ export default function HumanFactory() {
         left: 500,
       },
     },
+    toothPositions: {
+      leftTooth: { top: 1160, left: 230 },
+      middleTooth: {},
+      rightTooth: { top: 1160, left: 310 },
+    },
+    toothColor: "blue",
   };
 
   return (
     <div>
-      <HumanEditor human={human1}></HumanEditor>
+      <HumanEditor human={human1} />
       <HumanEditor human={human2} />
     </div>
   );

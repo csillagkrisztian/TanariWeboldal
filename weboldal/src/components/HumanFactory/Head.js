@@ -4,6 +4,7 @@ import Eyes from "./Eyes";
 import Mouth from "./Mouth";
 import Nose from "./Nose";
 import Ears from "./Ears";
+import Teeth from "./Teeth";
 
 export default function Head({
   eyesColor,
@@ -18,6 +19,8 @@ export default function Head({
   earRightVerticalPosition,
   headPosition,
   mouthPosition,
+  toothPositions,
+  toothColor,
 }) {
   return (
     <div>
@@ -42,7 +45,9 @@ export default function Head({
         earRightVerticalPosition={earRightVerticalPosition}
       />
       <Nose nosePosition={nosePosition} />
+
       <Mouth lipColor={lipColor} mouthPosition={mouthPosition} />
+      <Teeth toothPositions={toothPositions} toothColor={toothColor} />
       <Eyes eyesColor={eyesColor} eyePosition={eyePosition} />
     </div>
   );
