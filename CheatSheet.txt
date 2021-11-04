@@ -41,3 +41,38 @@ html argumentumok ->
 onClick - onClick={(event)=>{}}
 
 F2 a variansra es kivalasztod az osszes esetets
+
+Listafunckiok : 
+
+const map =  [1,2,3].map( x=>{
+    return x+1
+}) 
+
+// map = [2,3,4]
+
+const find = [1,2,3,4].find( x=> {
+    return x%2===0
+})
+
+// find = 2
+
+const filter = [1,2,3,4].find( x=> {
+    return x%2===0
+})
+
+// filter = [2,4]}
+
+netrol adatszedes : 
+
+useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get(
+        "https://codaisseur-pokemon-api.herokuapp.com/pokemon/120"
+      );
+      setDatabase(result.data);
+    };
+    fetchData();
+  }, []);
+
+
+// Internet 4 kulcsszoval kommunikal -> GET/PUT/POST/DELETE

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Card } from "react-bootstrap";
 import { ReactComponent as Eye } from "./images/eye.svg";
 import { ReactComponent as Mouth } from "./images/mouth.svg";
 import { ReactComponent as Nose } from "./images/nose.svg";
@@ -23,7 +23,9 @@ export default function App() {
   const [database, setDatabase] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:8000");
+      const result = await axios.get(
+        "https://codaisseur-pokemon-api.herokuapp.com/"
+      );
       setDatabase(result.data);
     };
     fetchData();
@@ -39,10 +41,79 @@ export default function App() {
     );
   }*/
 
+  const Navigation = () => {
+    return (
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="https://e7.pngegg.com/pngimages/978/632/png-clipart-pokemon-pokemon.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            PokeBaút
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link>
+              <Link to="/">Home</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/list">List</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/about">About</Link>
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    );
+  };
+
+  const Pokemon = () => {
+    return (
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Body>
+          <Card.Title></Card.Title>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+    );
+  };
+
+  const Home = () => {
+    return <div>Home</div>;
+  };
+
+  const About = () => {
+    return <div>About</div>;
+  };
+
+  const List = () => {
+    return <div>List</div>;
+  };
+
+  console.log("database", database);
+
   return (
-    <div className="App">
-      <HumanFactory></HumanFactory>
-      {/*<Navbar
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/list">
+          <List />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <div className="App">
+        {/*<HumanFactory></HumanFactory>*/}
+        {/*<Navbar
         sticky="top"
         style={{ background: "white" }}
         className="border-bottom border-dark"
@@ -81,6 +152,7 @@ export default function App() {
           </Route>
         </Switch>
       </Router>*/}
-    </div>
+      </div>
+    </Router>
   );
 }
