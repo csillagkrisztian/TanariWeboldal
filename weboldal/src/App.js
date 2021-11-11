@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { ReactComponent as Eye } from "./images/eye.svg";
 import { ReactComponent as Mouth } from "./images/mouth.svg";
@@ -18,6 +24,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hospital-health-cropped-icon-png-physician-senior-services-5d05236ae760a0.7278499315606178349477.png";
 import HumanFactory from "./components/HumanFactory/index";
+import HappyBirthday from "./components/HappyBirthday";
 
 export default function App() {
   const [database, setDatabase] = useState();
@@ -39,9 +46,66 @@ export default function App() {
     );
   }*/
 
+  const szulinaposok = [
+    { id: "1", name: "Aco", birthday: "24" },
+    { id: "2", name: "Bibi", birthday: "71" },
+    { id: "3", name: "Aco", birthday: "2" },
+    { id: "4", name: "Borisz", birthday: "30" },
+  ];
+
+  const HomePage = () => {
+    return <h1> HOME! </h1>;
+  };
+
+  const Birthdays = () => {
+    return (
+      <div>
+        {szulinaposok.map((szulinapos) => {
+          return (
+            <Link to={`/birthdays/${szulinapos.id}`}>
+              <p>{szulinapos.name}</p>
+            </Link>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const Human = () => {
+    const param = useParams();
+    const human = szulinaposok.find((szulinapos) => param.id === szulinapos.id);
+    return (
+      <div>
+        <p>NAME IS: {human.name} </p>
+      </div>
+    );
+  };
+
   return (
     <div className="App">
-      <HumanFactory></HumanFactory>
+      <Router>
+        <Switch>
+          <Route path={"/birthdays/:id"}>
+            <Human></Human>
+          </Route>
+          <Route path={"/birthdays"}>
+            <Birthdays></Birthdays>
+          </Route>
+          <Route path={"/"}>
+            <HomePage></HomePage>
+          </Route>
+        </Switch>
+      </Router>
+
+      {/*{szulinaposok.map((szulinapos) => {
+        return (
+          <HappyBirthday
+            name={szulinapos.name}
+            birthday={szulinapos.birthday}
+          ></HappyBirthday>
+        );
+      })}*/}
+
       {/*<Navbar
         sticky="top"
         style={{ background: "white" }}
