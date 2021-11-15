@@ -7,6 +7,7 @@ import Home from "./components/PokemonComponents/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import List from "./components/PokemonComponents/List";
 import PokemonList from "./components/PokemonComponents/PokemonList";
+import PokemonDetail from "./components/PokemonComponents/PokemonDetail";
 
 export default function App() {
   const [database, setDatabase] = useState();
@@ -63,8 +64,8 @@ export default function App() {
     <Router>
       <Navigation />
       <Switch>
-        <Route path="/list/:pokemon">
-          <List />
+        <Route path="/list/:name">
+          <PokemonDetail database={database} />
         </Route>
         <Route path="/list">
           <PokemonList />

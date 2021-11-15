@@ -21,7 +21,14 @@ export default function PokemonList() {
 
   console.log("pokemonlista", pokemonLista);
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: "120px",
+      }}
+    >
       {pokemonLista.map((pokemon) => {
         return (
           <Link to={`/list/${pokemon.name}`}>

@@ -29,7 +29,6 @@ export default function Pokemon({ name, url }) {
       <Card.Img variant="top" src={pokemon.sprites.front_default} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
   );
