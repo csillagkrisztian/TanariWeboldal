@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, NavDropdown } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
 import axios from "axios";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./components/CsillagLikorHazi/Home";
+import RandomDrink from "./components/CsillagLikorHazi/RandomDrink";
+import DrinkList from "./components/CsillagLikorHazi/DrinkList";
+import NavBar from "./components/CsillagLikorHazi/NavBar";
 
 export default function App() {
   const [database, setDatabase] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:8000");
+      const result = await axios.get(
+        "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
+      );
       setDatabase(result.data);
     };
     fetchData();
   }, []);
 
-  /*if (!database) {
+  if (!database) {
     return (
       <div className="heart-container">
         <div className="lds-heart">
@@ -22,50 +30,25 @@ export default function App() {
         </div>
       </div>
     );
-  }*/
+  }
 
   return (
-    <div className="App">
-      <HumanFactory></HumanFactory>
-      {/*<Navbar
-        sticky="top"
-        style={{ background: "white" }}
-        className="border-bottom border-dark"
-      >
-        <Container>
-          <Navbar.Brand href="/">
-            <img
-              alt="Hospital Logo"
-              src={HospitalLogo}
-              width="60"
-              height="60"
-            />
-            {"Bácska Hospital Service"}
-          </Navbar.Brand>
-          <Nav>
-            <Nav.Link href="/hospitals">Our hospitals</Nav.Link>
-            <Nav.Link href="/about"> About us</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <div>
+      <NavBar />
+
       <Router>
         <Switch>
-          <Route path="/geci">
+          <Route path="/randomdrink/">
+            <RandomDrink />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/hospitals/:hospitalId">
-            <Hospital hospitals={database}></Hospital>
-          </Route>
-          <Route path="/hospitals">
-            <Hospitals hospitals={database} />
+          <Route path="/drinklist">
+            <DrinkList />
           </Route>
           <Route path="/">
-            <Home />
+            <Home database={database} />
           </Route>
         </Switch>
-      </Router>*/}
+      </Router>
     </div>
   );
 }
