@@ -45,7 +45,7 @@ export default function App() {
             <DrinkList />
           </Route>
           <Route path="/">
-            <Home database={database} />
+            <Home database={database.drinks} />
           </Route>
         </Switch>
       </Router>
