@@ -31,7 +31,6 @@ export default function App() {
       </div>
     );
   }
-  console.log(database);
 
   return (
     <div>
