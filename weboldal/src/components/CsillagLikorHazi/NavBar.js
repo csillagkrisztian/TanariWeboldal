@@ -5,10 +5,10 @@ export default function NavBar() {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Nav.Link href="#home">Rom Kocsma</Nav.Link>
+        <Nav.Link href="/">Rom Kocsma</Nav.Link>
         <Container className="justify-content-center">
-          <Nav.Link href="#drinklist">Liquores</Nav.Link>
-          <Nav.Link href="#ramdomdrink">I'm bored</Nav.Link>
+          <Nav.Link href="drinklist">Liquores</Nav.Link>
+          <Nav.Link href="randomdrink">I'm bored</Nav.Link>
         </Container>
       </Navbar>
     </div>

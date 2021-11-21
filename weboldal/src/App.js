@@ -9,28 +9,36 @@ import Home from "./components/CsillagLikorHazi/Home";
 import RandomDrink from "./components/CsillagLikorHazi/RandomDrink";
 import DrinkList from "./components/CsillagLikorHazi/DrinkList";
 import NavBar from "./components/CsillagLikorHazi/NavBar";
+import Kacomaco from "./components/CsillagLikorHazi/Kacomaco";
 
 export default function App() {
-  const [database, setDatabase] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
+  const [database, setDatabase] = useState([]);
+
+  async function fetchData() {
+    try {
+      const alcoholic = await axios.get(
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
       );
-      setDatabase(result.data);
-    };
+      const nonAlcoholic = await axios.get(
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
+      );
+      setDatabase([...alcoholic.data.drinks, ...nonAlcoholic.data.drinks]);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+
+  useEffect(() => {
     fetchData();
   }, []);
 
-  if (!database) {
-    return (
-      <div className="heart-container">
-        <div className="lds-heart">
-          <div></div>
-        </div>
-      </div>
-    );
+  if (!database.length) {
+    return <p>ZZZZZZ</p>;
   }
+
+  const drinkID = database.map((drinkID) => {
+    return drinkID.idDrink;
+  });
 
   return (
     <div>
@@ -42,10 +50,13 @@ export default function App() {
             <RandomDrink />
           </Route>
           <Route path="/drinklist">
-            <DrinkList />
+            <DrinkList drinkID={drinkID} />
           </Route>
           <Route path="/">
-            <Home database={database.drinks} />
+            <Home database={database} />
+          </Route>
+          <Route path="/kacomaco">
+            <DrinkList drinkID={drinkID} />
           </Route>
         </Switch>
       </Router>
