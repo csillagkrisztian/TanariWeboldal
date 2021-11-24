@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Country.css";
 import { Card, Row, Col, Container, Button, CardGroup } from "react-bootstrap";
 
-export default function CountryFlag({ flag, name }) {
+export default function Country({ flag, name, noImg }) {
   const styles = {
     card: {
       backgroundColor: "#B7E0F2",
@@ -11,8 +11,7 @@ export default function CountryFlag({ flag, name }) {
       padding: "3rem",
     },
   };
-  const noImg =
-    "https://www.universetoday.com/wp-content/uploads/2010/03/Earth-Pacific-Ocean.jpg";
+
   return (
     <div>
       <Container fluid className="text-center">
@@ -20,14 +19,17 @@ export default function CountryFlag({ flag, name }) {
           <Card className="m-5 border-0 shadow" style={styles.card}>
             <Row className="row">
               <Col>
-                <Card.Img src={!flag ? noImg : flag} />
+                <a href={`/countrydetail${name}`}>
+                  {" "}
+                  <Card.Img src={!flag ? noImg : flag} />{" "}
+                </a>
               </Col>
               <Col>
                 <Card.Body>
                   <Card.Title as="h1">{name}</Card.Title>
                   <Card.Text as="h4">dsadsadas</Card.Text>
                 </Card.Body>
-                <Button href={""}>Read More</Button>
+                <Button href={`/countrydetail${name}`}>Read More</Button>
               </Col>
             </Row>
           </Card>{" "}
