@@ -6,7 +6,7 @@ import { Card, Row, Col, Container, Button, CardGroup } from "react-bootstrap";
 export default function Country({ flag, name, noImg }) {
   const styles = {
     card: {
-      backgroundColor: "#B7E0F2",
+      backgroundColor: "#B7E0F2", //idk how to put in css
       borderRadius: 55,
       padding: "3rem",
     },

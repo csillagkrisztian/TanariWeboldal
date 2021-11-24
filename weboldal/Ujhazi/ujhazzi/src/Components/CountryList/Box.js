@@ -3,14 +3,7 @@ import "./Box.css";
 
 export default function Box({ name, noImg, flag }) {
   return (
-    <div
-      style={{
-        height: "312px",
-        width: "312px",
-        border: "black solid 1px",
-        margin: "10px",
-      }}
-    >
+    <div className="boxDiv">
       {" "}
       <a href={`/countrydetail${name}`}>
         <img src={!flag ? noImg : flag}></img>{" "}
