@@ -1,0 +1,21 @@
+.a1 {
+  position: absolute;
+  margin-left: 700px;
+  margin-top: 200px;
+}
+
+.b1 {
+  position: absolute;
+  margin-left: 800px;
+  margin-top: 450px;
+}
+
+.c1 {
+  position: absolute;
+  margin-left: 900px;
+  margin-top: 200px;
+}
+
+p {
+  margin-left: 80px;
+}
