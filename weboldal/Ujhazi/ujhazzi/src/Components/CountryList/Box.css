@@ -1,3 +1,10 @@
 img {
   width: 150px;
 }
+
+.boxDiv {
+  height: 312px;
+  width: 312px;
+  border: black solid 1px;
+  margin: 10px;
+}
