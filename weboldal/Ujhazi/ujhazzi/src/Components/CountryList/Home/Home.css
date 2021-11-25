@@ -1,3 +1,8 @@
+.d1 {
+  background-image: url("https://educationblog.oup.com/wp-content/uploads/2015/09/oup_58381-705x435.jpg");
+  background-size: auto;
+}
+
 .a1 {
   position: absolute;
   margin-left: 700px;
@@ -18,4 +23,21 @@
 
 p {
   margin-left: 80px;
+}
+
+.p1 {
+  margin-top: -200px;
+  color: #000000;
+}
+
+.p2 {
+  margin-top: -190px;
+  margin-left: 70px;
+  color: #000000;
+}
+
+.p3 {
+  margin-top: -50px;
+  margin-top: -200px;
+  color: white;
 }
