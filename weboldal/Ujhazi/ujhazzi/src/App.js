@@ -1,9 +1,10 @@
-import Home from "./Components/Home";
+import Home from "./Components/CountryList/Home/Home";
 import CountryDetail from "./Components/CountryList/CountryDetail";
 import CountryList from "./Components/CountryList/CountryList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useFetch from "./Components/useFetch.js";
 import VisitedCountries from "./Components/CountryList/VisitedCountries";
+import Teacher from "./Components/CountryList/Teacher/Teacher";
 
 function App() {
   const { database: countries } = useFetch(
@@ -35,6 +36,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="/teacher" element={<Teacher />} />
           <Route
             path="/visitedcountries"
             element={<VisitedCountries noImg={noImg} />}
