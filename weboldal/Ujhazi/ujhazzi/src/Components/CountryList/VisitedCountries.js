@@ -22,13 +22,13 @@ export default function VisitedCountries({ noImg }) {
     );
   }
 
-  const idemoarray = [].concat(database[0], database[1], database[2]);
+  const countryList = [].concat(database[0], database[1], database[2]);
 
-  const idemoidemo = idemoarray.map((countryname) => {
-    return countryname.name.official;
+  console.log(typeof countryList, "???? idemo");
+
+  const filteringCountries = countryList.filter((countrydata) => {
+    return countrydata.languages.eng;
   });
-
-  console.log(idemoidemo);
 
   return (
     <div>
@@ -39,7 +39,7 @@ export default function VisitedCountries({ noImg }) {
           flexWrap: "wrap",
         }}
       >
-        {idemoarray.map((countryData) => {
+        {countryList.map((countryData) => {
           return (
             <>
               {" "}

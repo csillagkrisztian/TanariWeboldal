@@ -18,10 +18,18 @@ function App() {
     );
   }
 
+  const countrylist2 = [].concat(countries);
+
+  console.log("countries>", countries);
+
+  console.log(typeof countries, "????countries");
+
+  const filteringCountries = countrylist2.filter((countrylang) => {
+    return countrylang.languages.eng;
+  });
+
   const noImg =
     "https://www.universetoday.com/wp-content/uploads/2010/03/Earth-Pacific-Ocean.jpg";
-
-  console.log(countries, "DATABASE");
 
   return (
     <div>
