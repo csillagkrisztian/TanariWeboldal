@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Country.css";
 import { Card, Row, Col, Container, Button, CardGroup } from "react-bootstrap";
 
-export default function Country({ flag, name, noImg }) {
+export default function Country({ flag, name, noImg, googleMaps }) {
   const styles = {
     card: {
       backgroundColor: "#B7E0F2", //idk how to put in css
@@ -11,6 +11,8 @@ export default function Country({ flag, name, noImg }) {
       padding: "3rem",
     },
   };
+
+  console.log(googleMaps);
 
   return (
     <div>
@@ -30,6 +32,9 @@ export default function Country({ flag, name, noImg }) {
                   <Card.Text as="h4">dsadsadas</Card.Text>
                 </Card.Body>
                 <Button href={`/countrydetail${name}`}>Read More</Button>
+                <Button style={{ marginLeft: "15px" }} href={googleMaps}>
+                  Find on GoogleMaps
+                </Button>
               </Col>
             </Row>
           </Card>{" "}

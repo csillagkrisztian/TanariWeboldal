@@ -24,8 +24,6 @@ export default function VisitedCountries({ noImg }) {
 
   const countryList = [].concat(database[0], database[1], database[2]);
 
-  console.log(typeof countryList, "???? idemo");
-
   const filteringCountries = countryList.filter((countrydata) => {
     return countrydata.languages.eng;
   });

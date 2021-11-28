@@ -14,6 +14,7 @@ export default function CountryList({ countries, noImg }) {
               noImg={noImg}
               name={countryData.name.official}
               flag={countryData.coatOfArms.svg}
+              googleMaps={countryData.maps.googleMaps}
             />{" "}
           </>
         );
