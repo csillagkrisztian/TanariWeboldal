@@ -19,3 +19,7 @@ img:hover {
   display: flex;
   flex-wrap: wrap;
 }
+
+.mapsButton {
+  margin-left: 15px;
+}
