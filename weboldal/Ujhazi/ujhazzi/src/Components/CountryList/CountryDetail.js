@@ -29,6 +29,11 @@ export default function CountryDetail({ countries }) {
       </Button>{" "}
       <h1> {countryData[0].name.official}</h1>
       <img className="k" src={countryData[0].coatOfArms.svg} />
+      <h3 className="firsth3 ">Details:</h3>
+      <p className="firstP f1">Capital: {countryData[0].capital} </p>
+      <p className="secondP f1">Continent: {countryData[0].continents}</p>
+      <p className="thirdP f1">Region: {countryData[0].region}</p>
+      <p className="fourthP f1">Start Of Week: {countryData[0].startOfWeek}</p>
     </div>
   );
 }
