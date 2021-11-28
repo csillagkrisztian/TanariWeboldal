@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router";
 import useFetch from "../useFetch";
+import "./CountryDetail.css";
+import { Button } from "react-bootstrap";
 
 export default function CountryDetail({ countries }) {
   const params = useParams();
@@ -19,10 +21,14 @@ export default function CountryDetail({ countries }) {
     );
   }
 
+  console.log("yoyo", countryData);
   return (
     <div>
-      {" "}
+      <Button className="but" href="/">
+        Home
+      </Button>{" "}
       <h1> {countryData[0].name.official}</h1>
+      <img className="k" src={countryData[0].coatOfArms.svg} />
     </div>
   );
 }

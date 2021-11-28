@@ -20,7 +20,7 @@ export default function Home() {
         <p className="p2">Countries I've visited</p>
       </a>
       <a className="c1" href="/teacher">
-        <img src="https://lh3.googleusercontent.com/proxy/5YkSbfXkS1mR77989KRS4E2ghJIgXF7xgQRDykgwBd4rQdO97HKBeIoC5HCTtn0uvg8p3TjFqrG5t9J9IUiOrOnaIF8-NDHq1HTNW1lG5DWzVpxqzFPKzv0koNXj" />
+        <img src="https://lh3.googleusercontent.com/proxy/9bBjbSPdtmXG1uEWrnB-GIWe2ZpemG59me2TuUnUpuPYk2PJE8P78Y4XEpgtr6r2gYWNbDEzkTTux2AoqAllwwdwigRLukf7Z8NE7JnOGaTl9AZTksipQoYFMw" />
         <p className="p3">Szexi tanárnéni</p>
       </a>
     </div>

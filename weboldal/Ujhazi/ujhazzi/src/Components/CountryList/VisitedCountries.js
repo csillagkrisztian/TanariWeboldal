@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Box from "./Box";
 import { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 
 export default function VisitedCountries({ noImg }) {
   const linkID = ["german", "english", "spanish"];
@@ -30,6 +31,9 @@ export default function VisitedCountries({ noImg }) {
 
   return (
     <div>
+      <Button className="but" href="/">
+        Home
+      </Button>
       <h1>Countries I Visited</h1>
       <div
         style={{
@@ -45,7 +49,8 @@ export default function VisitedCountries({ noImg }) {
                 noImg={noImg}
                 name={countryData.name.official}
                 flag={countryData.coatOfArms.svg}
-              />{" "}
+              />
+              <a></a>{" "}
             </>
           );
         })}{" "}

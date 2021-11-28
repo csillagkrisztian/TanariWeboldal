@@ -1,0 +1,17 @@
+.k {
+  height: 700px;
+  width: auto;
+  margin-top: 100px;
+}
+
+.home {
+  margin-left: -500px;
+  margin-top: -50px;
+  position: absolute;
+}
+
+.but {
+  position: absolute;
+  margin-left: -300px;
+  margin-top: 30px;
+}

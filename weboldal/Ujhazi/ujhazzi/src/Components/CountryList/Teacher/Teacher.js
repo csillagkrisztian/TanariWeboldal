@@ -16,6 +16,9 @@ const szöveg6 =
 export default function Teacher() {
   return (
     <div>
+      <Button className="but" href="/">
+        Home
+      </Button>
       <Container className="fő">
         <Row>
           <Col className="nev">Csillag Krisztina</Col>
@@ -42,11 +45,7 @@ export default function Teacher() {
           </Col>
         </Row>
         <Row>
-          <Col>
-            <a className="home" href="/">
-              Home
-            </a>
-          </Col>
+          <Col></Col>
           <Col>
             <Card className="card1">Spain</Card>
             <Card className="card2">English</Card>
