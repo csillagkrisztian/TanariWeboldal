@@ -1,17 +1,24 @@
 import Home from "./Components/CountryList/Home/Home";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import CountryDetail from "./Components/CountryList/CountryDetail";
 import CountryList from "./Components/CountryList/CountryList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import useFetch from "./Components/useFetch.js";
 import VisitedCountries from "./Components/CountryList/VisitedCountries";
 import Teacher from "./Components/CountryList/Teacher/Teacher";
 
 function App() {
-  const { database: countries } = useFetch(
-    "https://restcountries.com/v3.1/all"
-  );
+  const [database, setDatabase] = useState();
 
-  if (!countries) {
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get("https://restcountries.com/v3.1/all");
+      setDatabase(result.data);
+    };
+    fetchData();
+  }, []);
+
+  if (!database) {
     return (
       <div>
         <div>Loading...</div>
@@ -33,11 +40,11 @@ function App() {
           />
           <Route
             path="/countrydetail:name"
-            element={<CountryDetail countries={countries} />}
+            element={<CountryDetail countries={database} />}
           />
           <Route
             path="/countrylist"
-            element={<CountryList countries={countries} noImg={noImg} />}
+            element={<CountryList countries={database} noImg={noImg} />}
           />
           <Route path="/" element={<Home />} />
         </Routes>

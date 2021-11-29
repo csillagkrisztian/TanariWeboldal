@@ -25,10 +25,6 @@ export default function VisitedCountries({ noImg }) {
 
   const countryList = [].concat(database[0], database[1], database[2]);
 
-  const filteringCountries = countryList.filter((countrydata) => {
-    return countrydata.languages.eng;
-  });
-
   return (
     <div>
       <Button className="but" href="/">

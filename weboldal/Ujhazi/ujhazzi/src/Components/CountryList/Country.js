@@ -12,8 +12,6 @@ export default function Country({ flag, name, noImg, googleMaps }) {
     },
   };
 
-  console.log(googleMaps);
-
   return (
     <div>
       <Container fluid className="text-center">
@@ -32,7 +30,7 @@ export default function Country({ flag, name, noImg, googleMaps }) {
                   <Card.Text as="h4">dsadsadas</Card.Text>
                 </Card.Body>
                 <Button href={`/countrydetail${name}`}>Read More</Button>
-                <Button style={{ marginLeft: "15px" }} href={googleMaps}>
+                <Button className="mapsButton" href={googleMaps}>
                   Find on GoogleMaps
                 </Button>
               </Col>
