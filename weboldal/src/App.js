@@ -20,16 +20,24 @@ import HospitalLogo from "./images/kisspng-physician-medicine-computer-icons-hos
 import HumanFactory from "./components/HumanFactory/index";
 
 export default function App() {
-  const [database, setDatabase] = useState();
+  const [text, setText] = useState();
+  const [person, setName] = useState();
+  const [posts, setDatabase] = useState();
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("http://localhost:8000");
+      console.log("result", result);
       setDatabase(result.data);
     };
     fetchData();
   }, []);
 
-  /*if (!database) {
+  async function sendComment(text, person) {
+    const result = await axios.post("http://localhost:8000", { text, person });
+    setDatabase(result.data);
+  }
+
+  if (!posts) {
     return (
       <div className="heart-container">
         <div className="lds-heart">
@@ -37,11 +45,55 @@ export default function App() {
         </div>
       </div>
     );
-  }*/
+  }
+
+  const Comment = ({ person, text }) => {
+    return (
+      <div
+        style={{
+          height: "180px",
+          width: "320px",
+          backgroundColor: "lightblue",
+          border: "solid 2px red",
+          padding: "30px",
+        }}
+      >
+        <h1>{person}</h1>
+        <p>"{text}"</p>
+      </div>
+    );
+  };
 
   return (
     <div className="App">
-      <HumanFactory></HumanFactory>
+      <div
+        style={{
+          backgroundColor: "gray",
+        }}
+      >
+        <div style={{ padding: "40px" }}>
+          <label>Nev:</label>
+          <input
+            type="text"
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+          ></input>
+          <label>Irj kommentet:</label>
+          <input
+            type="text"
+            onChange={(event) => {
+              setText(event.target.value);
+            }}
+          ></input>
+          <button onClick={() => sendComment(text, person)}>Feltoltes</button>
+        </div>
+
+        {posts.map((post) => {
+          return <Comment text={post.text} person={post.person}></Comment>;
+        })}
+      </div>
+
       {/*<Navbar
         sticky="top"
         style={{ background: "white" }}
